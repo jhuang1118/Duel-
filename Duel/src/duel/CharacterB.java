@@ -9,7 +9,8 @@ public  class CharacterB implements Dueler{
 		}
 		public String getName(){
 			name = "Jas";
-			return name;		}
+			return name;		
+		}
 		public void setStartingHP(int hp) {
 			System.out.println(hp);
 		}
@@ -17,18 +18,40 @@ public  class CharacterB implements Dueler{
 			return hp;
 		}
 		public boolean determineIfOpponentIsFair(Dueler d, int target) {
-			return true;
+			if (d.getHP() == target) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 		public int getAction(Object caller) {
-			double x = Math.random();
-			if (x < .3){
-				return 0;
-			else(.3 )
+			if (caller == getName()) {
+				double x = Math.random();
+				int y = 0;
+				String action = "";
+				if (x <= (1 / 3)) {
+					y = 0;
+					action = "guard";
+				}
+				else if (x > (1 / 3) && x <= (2 / 3)){
+					y = 1;
+					action = "load";
+				}
+				else if (x > (2 / 3)) {
+					y = 2;
+					action = "shoot";
+				}
+				return y;
 			}
-			
+			else {
+				return;
+			}
 		}
 		public void hit(Object caller) {
-			
+			int h = hp;
+			h - 10 = hp;
+			return hp; 
 		}
 }
 
