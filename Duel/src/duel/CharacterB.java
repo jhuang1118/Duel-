@@ -41,17 +41,12 @@ public  class CharacterB implements Dueler{
 				else if (x > (2 / 3)) {
 					y = 2;
 					action = "shoot";
-				}
-				return y;
 			}
-			else {
-				return;
-			}
+			return y;
 		}
+			
 		public void hit(Object caller) {
-			int h = hp;
-			h - 10 = hp;
-			return hp; 
+			hp = hp - 10;
 		}
 }
 
