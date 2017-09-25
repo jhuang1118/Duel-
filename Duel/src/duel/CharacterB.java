@@ -3,51 +3,66 @@ package duel;
 public  class CharacterB implements Dueler{
 	private String name;
 	private int hp;
-	public CharacterB() {}
-		public void taunt() {
-			System.out.println("You will lose");
+	private boolean isLoaded;
+	
+	public CharacterB() {
+		
+	}
+	
+	public void taunt() {
+		System.out.println("You Will Lose!");
+	}
+	
+	public String getName(){
+		return "Jas";		
+	}
+	
+	public void setStartingHP(int hp) {
+		this.hp = hp;
+	}
+	
+	public int getHP() {
+		return hp;
+	}
+	
+	public boolean determineIfOpponentIsFair(Dueler d, int target) {
+		if (d.getHP() == target) {
+			return true;
 		}
-		public String getName(){
-			name = "Jas";
-			return name;		
+		else {
+			return false;
 		}
-		public void setStartingHP(int hp) {
-			System.out.println(hp);
-		}
-		public int getHP() {
-			return hp;
-		}
-		public boolean determineIfOpponentIsFair(Dueler d, int target) {
-			if (d.getHP() == target) {
-				return true;
+	}
+	
+	public int getAction(Object caller) {
+		if (caller instanceof Duel) {
+			if (isLoaded == true) {
+				double x = Math.random(); 
+				if (x >= .3) {
+					return Duel.SHOOTING;
+				}
+				else {
+					return Duel.GUARDING;
+				}
 			}
 			else {
-				return false;
-			}
-		}
-		public int getAction(Object caller) {
-			if (caller == getName()) {
 				double x = Math.random();
-				int y = 0;
-				String action = "";
-				if (x <= (1 / 3)) {
-					y = 0;
-					action = "guard";
+				if (x >= .3) {
+					return Duel.LOADING;
+					isLoaded = true;
 				}
-				else if (x > (1 / 3) && x <= (2 / 3)){
-					y = 1;
-					action = "load";
+				else {
+					return Duel.GUARDING;
 				}
-				else if (x > (2 / 3)) {
-					y = 2;
-					action = "shoot";
 			}
-			return y;
 		}
-			
-		public void hit(Object caller) {
+	}
+		
+	public void hit(Object caller) {
+		if (caller instanceof Duel) {
 			hp = hp - 10;
 		}
+	}
 }
 
 

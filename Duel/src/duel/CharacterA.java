@@ -23,6 +23,3 @@ public class CharacterA implements Dueler {
 			return true;
 		}
 	}
-
-
-
