@@ -39,7 +39,7 @@ public class CharacterA implements Dueler {
 			
 			if(caller instanceof Duel) {
 				if(this.currentHP >= 20) {
-					if(rngAction < 8) {
+					if(rngAction < 5) {
 						return 2;
 					}
 					else if (rngAction < 2) {
