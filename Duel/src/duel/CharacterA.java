@@ -1,5 +1,5 @@
 package duel;
-
+//Johnson Huang
 public class CharacterA implements Dueler {
 	private String name;
 	private int currentHP;
