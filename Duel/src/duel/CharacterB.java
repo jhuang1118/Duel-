@@ -3,7 +3,7 @@ package duel;
 public  class CharacterB implements Dueler{
 	private String name;
 	private int hp;
-	private boolean isLoaded;
+	private boolean isLoaded = false;
 	
 	public CharacterB() {
 		
