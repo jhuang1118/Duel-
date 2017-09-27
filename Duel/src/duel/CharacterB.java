@@ -14,7 +14,8 @@ public  class CharacterB implements Dueler{
 	}
 	
 	public String getName(){
-		return "Jas";		
+		name = "Jas";
+		return name;		
 	}
 	
 	public void setStartingHP(int hp) {
@@ -48,14 +49,15 @@ public  class CharacterB implements Dueler{
 			else {
 				double x = Math.random();
 				if (x >= .3) {
-					return Duel.LOADING;
 					isLoaded = true;
+					return Duel.LOADING;
 				}
 				else {
 					return Duel.GUARDING;
 				}
 			}
 		}
+		return Duel.YEAH_RIGHT;
 	}
 		
 	public void hit(Object caller) {
