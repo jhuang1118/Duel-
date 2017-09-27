@@ -40,6 +40,7 @@ public  class CharacterB implements Dueler{
 			if (isLoaded == true) {
 				double x = Math.random(); 
 				if (x >= .3) {
+					isLoaded = false;
 					return Duel.SHOOTING;
 				}
 				else {
