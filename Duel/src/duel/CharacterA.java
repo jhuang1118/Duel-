@@ -77,6 +77,7 @@ public class CharacterA implements Dueler {
 			else {
 				int action = (int)(Math.random() * 2);
 				if(action == 0) {
+					isLoaded = true;
 					return action;
 				}
 				return 2;
